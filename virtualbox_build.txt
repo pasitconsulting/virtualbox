@@ -1,8 +1,0 @@
-setx VM "TEST2"
-VBoxManage createvm --name $VM --ostype "RedHat_64" --register
-VBoxManage createhd --filename TEST.vdi --size 32768
-VBoxManage storagectl TEST --name "SATA Controller" --add sata --controller IntelAHCI
-VBoxManage storageattach TEST --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium TEST.vdi
-
-VBoxManage modifyvm TEST --memory 512 --vram 128
-VBoxManage modifyvm TEST --nic1 hostonly --hostonlyadapter1 
